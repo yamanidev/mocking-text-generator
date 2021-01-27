@@ -18,12 +18,14 @@ function mock(str){
 
 function test(){
     let inputField = document.getElementsByTagName('input')[0];
-    inputField.value = mock(inputField.value);
-    inputField.select();
-    document.execCommand('Copy');
-    inputField.value = '';
-    let copied = document.createElement('h6');
-    copied.innerText = 'Copied!';
-    document.body.appendChild(copied);
+    if (inputField.value == ''){
+        alert('Are you mocking me?');
+    }
+    else{
+        inputField.value = mock(inputField.value);
+        inputField.select();
+        document.execCommand('Copy');
+        inputField.value = '';
+    }
 }
 

@@ -16,7 +16,7 @@ function mock(str){
     return x;
 }
 
-function test(){
+function copy(){
     let inputField = document.getElementsByTagName('input')[0];
     if (inputField.value == ''){
         alert('Are you mocking me?');
@@ -26,6 +26,7 @@ function test(){
         inputField.select();
         document.execCommand('Copy');
         inputField.value = '';
+        document.getElementsByClassName("copied-notif")[0].style.display = "flex";
     }
 }
 

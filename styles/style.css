@@ -47,10 +47,6 @@ button:hover{
     color: rgb(226, 224, 224);
 }
 
-input:focus, button:focus{
-    outline: none;
-}
-
 .copied-notif{
     display: none;
     position: absolute;

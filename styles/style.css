@@ -5,20 +5,27 @@
 }
 
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     font-family: sans-serif;
     height: 100vh;
     background-color: #c5c5c5;
 }
 
-h1{
+.container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.main-heading{
     font-size: 7vw;
 }
 
-input{
+.input-field{
     font-family: inherit;
     margin-top: 150px;
     margin-bottom: 30px;
@@ -31,7 +38,7 @@ input{
     border-radius: 10px;
 }
 
-button{
+.btn{
     padding: 10px;
     font-size: 20px;
     background-color: #282936;
@@ -43,7 +50,7 @@ button{
     border-radius: 10px;
 }
 
-button:hover{
+.btn:hover{
     color: rgb(226, 224, 224);
 }
 

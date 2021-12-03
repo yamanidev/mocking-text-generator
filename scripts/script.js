@@ -1,14 +1,19 @@
-function mock(str){
+const copyMockedBtn = document.getElementById("copy-mocked-btn");
+const toMockInput = document.getElementById("to-mock-input");
+const mockedOutput = document.getElementById("mocked-output");
+
+function mock(str) {
+    str = str.trim();
     let x = '';
-    for (let i = 0; i < str.length; ++i){
-        if (str[i] == ' '){
+    for (let i = 0; i < str.length; ++i) {
+        if (str[i] == ' ') {
             x += ' ';
         }
-        else{
-            if (i % 2 == 0){
+        else {
+            if (i % 2 == 0) {
                 x += str[i].toUpperCase();
             }
-            else{
+            else {
                 x += str[i];
             }
         }
@@ -16,17 +21,15 @@ function mock(str){
     return x;
 }
 
-function copy(){
-    let inputField = document.getElementsByTagName('input')[0];
-    if (inputField.value == ''){
-        alert('Are you mocking me?');
-    }
-    else{
-        inputField.value = mock(inputField.value);
-        inputField.select();
-        document.execCommand('Copy');
-        inputField.value = '';
-        document.getElementsByClassName("copied-notif")[0].style.display = "flex";
-    }
-}
+toMockInput.addEventListener("input", (e) => {
+    mockedOutput.innerText = mock(e.target.value);
+});
 
+copyMockedBtn.addEventListener("click", () => {
+    if (!toMockInput.value) {
+        alert("Empty field");
+    } else {
+        navigator.clipboard.writeText(mockedOutput.value);
+        alert("Mocked text copied!");
+    }
+});

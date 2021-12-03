@@ -6,74 +6,82 @@
 
 body{
     font-family: sans-serif;
-    height: 100vh;
     background-color: #c5c5c5;
 }
 
-.container{
-    width: 100%;
-    max-width: 1000px;
-    margin: 2rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.textarea, #copy-mocked-btn{
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.outer-container{
+    height: 100vh;
+    padding: 2rem;
     text-align: center;
 }
 
 .main-heading{
-    font-size: 7vw;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    font-weight: 500;
 }
 
-.input-field{
-    font-family: inherit;
-    margin-top: 150px;
-    margin-bottom: 30px;
-    width: 80%;
-    font-size: 20px;
-    padding: 5px;
-    margin-right: 10px;
-    border: 0;
-    box-shadow:0 0 15px 4px rgba(141, 58, 58, 0.06);
-    border-radius: 10px;
+@media screen and (max-width: 500px){
+    .outer-container{
+        padding: 0.5rem 1rem;
+    }
+
+    .main-heading{
+        font-size: 2.5rem;
+    }
 }
 
-.btn{
-    padding: 10px;
-    font-size: 20px;
-    background-color: #282936;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 10px;
-    border: 0;
+.inner-container{
+    display: flex;
+    gap: 1rem;
+}
+
+.to-mock-container, .mocked-container{
+    width: 50%;
+}
+
+.mocked-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea{
+    height: 300px;
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    display: block;
+    resize: none;
+}
+
+
+@media screen and (max-width: 770px){
+    .main-heading{
+        margin-bottom: 2rem;
+    }
+
+    .inner-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .to-mock-container, .mocked-container{
+        width: 100%;
+    }
+
+    .textarea{
+        height: 200px;
+    }
+}
+
+#copy-mocked-btn{   
+    padding: 0.5rem 1.4rem;
+    margin-top: 1rem;
+    display: inline-block;
+    align-self: flex-end;
     cursor: pointer;
-    border-radius: 10px;
-}
-
-.btn:hover{
-    color: rgb(226, 224, 224);
-}
-
-.copied-notif{
-    display: none;
-    position: absolute;
-    top: 1px;
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background-color: #222831;
-    color: white;
-    border-radius: 5px;
-    animation: fade-in 0.5s forwards 2 alternate;
-}
-
-@keyframes fade-in{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 0.8;
-        transform: translateY(30%);
-    }
 }

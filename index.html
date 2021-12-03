@@ -11,11 +11,17 @@
 <body>
     
     <main>
-        <div class="container">
-            <div class="copied-notif">Copied!</div>
+        <div class="outer-container">
             <h1 class="main-heading">Mocking Text Generator</h1>
-            <input class="input-field" type='text' autocomplete='off' placeholder='Mock Away' autofocus required>
-            <button class="btn" type="button" onclick="copy()">Copy Mocked Version</button>
+            <div class="inner-container">
+                <div class="to-mock-container">
+                    <textarea id="" class="textarea to-mock-input" placeholder="Feed me text to mock"></textarea>
+                </div>
+                <div class="mocked-container">
+                    <textarea id="" class="textarea mocked-output" placeholder="Mocked text will be displayed here"></textarea>
+                    <button id="copy-mocked-btn">Copy</button>
+                </div>
+            </div>
         </div>
     </main>
 

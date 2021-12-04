@@ -25,7 +25,7 @@
 
                     <textarea id="mocked-output" class="textarea mocked-output" placeholder="Mocked text will be displayed here" readonly></textarea>
 
-                    <div class="copied-notif" id="copied-notif">
+                    <div class="copied-notif notif" id="copied-notif">
 
                         <div>
                             <svg class="notif-icon svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,7 +38,26 @@
                         </div>
 
                         <div class="close-notif">
-                            <svg class="close-notif-icon svg" id="close-notif" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <svg class="close-notif-icon svg" id="close-copied-notif" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+
+                    </div>
+
+                    <div class="error-notif notif" id="error-notif">
+                        <div>
+                            <svg class="notif-icon svg" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+
+                        <div class="notif-message">
+                            Empty input!
+                        </div>
+
+                        <div class="close-notif">
+                            <svg class="close-notif-icon svg" id="close-error-notif" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </div>

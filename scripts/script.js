@@ -1,8 +1,14 @@
+// Elements
+
 const copyMockedBtn = document.getElementById("copy-mocked-btn");
 const toMockInput = document.getElementById("to-mock-input");
 const mockedOutput = document.getElementById("mocked-output");
 const copiedNotif = document.getElementById("copied-notif");
-const closeNotifBtn = document.getElementById("close-notif");
+const closeCopiedNotifBtn = document.getElementById("close-copied-notif");
+const errorNotif = document.getElementById("error-notif");
+const closeErrorNotifBtn = document.getElementById("close-error-notif");
+
+// Utility functions
 
 function mock(str) {
     str = str.trim();
@@ -29,15 +35,28 @@ function removeNotif(el) {
     }
 }
 
+// Event listeners
+
 toMockInput.addEventListener("input", (e) => {
     mockedOutput.innerText = mock(e.target.value);
 });
 
 copyMockedBtn.addEventListener("click", () => {
     if (!toMockInput.value) {
-        alert("Empty field");
-    } else {
+        // Delete other notification if displayed
+        removeNotif(copiedNotif);
+        errorNotif.classList.add("active");
+        setTimeout(
+            () => {
+                removeNotif(errorNotif);
+            },
+            4000
+        );
+    }
+    else {
         navigator.clipboard.writeText(mockedOutput.value);
+        // Delete other notification if displayed
+        removeNotif(errorNotif);
         copiedNotif.classList.add("active");
         setTimeout(
             () => {
@@ -48,6 +67,10 @@ copyMockedBtn.addEventListener("click", () => {
     }
 });
 
-closeNotifBtn.addEventListener("click", () => {
+closeCopiedNotifBtn.addEventListener("click", () => {
     removeNotif(copiedNotif);
-})
+});
+
+closeErrorNotifBtn.addEventListener("click", () => {
+    removeNotif(errorNotif);
+});

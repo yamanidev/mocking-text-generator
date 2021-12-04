@@ -84,3 +84,36 @@ body{
     align-self: flex-end;
     cursor: pointer;
 }
+
+.copied-notif{
+    padding: 1rem;
+    margin-top: 0.5rem;
+    display: none;
+    border-radius: 5px;
+    background-color: #898989;
+}
+
+.svg{
+    display: block;
+    color: #1b1b1b;
+}
+
+.notif-icon{
+    width: 30px;
+    margin-right: 0.5rem;
+}
+
+.close-notif{
+    margin-left: auto;
+}
+
+.close-notif-icon{
+    width: 20px;
+    cursor: pointer;
+}
+
+.copied-notif.active{
+    display: flex;
+    align-items: center;
+
+}

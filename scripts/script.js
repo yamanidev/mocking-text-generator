@@ -42,7 +42,7 @@ toMockInput.addEventListener("input", (e) => {
 });
 
 copyMockedBtn.addEventListener("click", () => {
-    if (!toMockInput.value) {
+    if (!toMockInput.value.trim()) {
         // Delete other notification if displayed
         removeNotif(copiedNotif);
         errorNotif.classList.add("active");
